@@ -1,3 +1,15 @@
+# qxx: 我的理解: 
+工作原理: 把./nginx/log映射到了nginx里, 同时映射到了filebeat里, 所以filebeat你能监控的日志的文件的变化; 
+
+## 程序的理解
+- App: 后端程序, 基于nodejs、express
+- Nginx: 转发请求到app
+- Elasticsearch: 存储; 
+- Filebeat: 收集nginx的日志到logstash
+- Logstash: 解析收到的filebeat的日志, 存到es
+- Kibana: 管理、可视化es
+
+
 # Elastic stack (ELK) + Filebeat for Monitoring Nginx on Docker
 
 This is extended version from [ELK on Docker](https://github.com/deviantony/docker-elk) with Filebeat plugin. Filebeat takes in charge of streaming log file from nginx to Logstash then processing it and visualize to Kibana.
