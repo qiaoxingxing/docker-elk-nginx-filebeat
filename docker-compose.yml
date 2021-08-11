@@ -96,7 +96,7 @@ services:
     build:
       context: filebeat/
       args:
-        ELK_VERSION: $ELK_VERSION    
+        ELK_VERSION: $ELK_VERSION
     entrypoint: "filebeat -e -strict.perms=false"
     volumes:
       - ./filebeat/config/filebeat.yml:/usr/share/filebeat/filebeat.yml
